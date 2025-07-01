@@ -3,9 +3,9 @@ import xml.etree.ElementTree as ET
 import io
 import zipfile
 
-st.title("🧹 XML Cleaner: Xóa thẻ <DSCKS> (Nhiều file)")
+st.title("🧹 XML Cleaner")
 
-uploaded_files = st.file_uploader("Tải lên nhiều file XML", type="xml", accept_multiple_files=True)
+uploaded_files = st.file_uploader("Upload XMLs", type="xml", accept_multiple_files=True)
 
 if uploaded_files:
     zip_buffer = io.BytesIO()
@@ -35,7 +35,7 @@ if uploaded_files:
     st.success("✅ Đã xử lý xong tất cả file!")
 
     st.download_button(
-        label="📦 Tải về file ZIP chứa XML đã xoá <DSCKS>",
+        label="📦 Tải về file ZIP chứa các XMLs",
         data=zip_buffer,
         file_name="cleaned_xml_files.zip",
         mime="application/zip"
